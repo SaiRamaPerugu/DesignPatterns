@@ -3,8 +3,8 @@ package com.ram.factory;
 public abstract class PizzaStore {
 
     public Pizza orderPizza(String type) {
-        return null;
+        return createPizza(type);
     }
 
-    abstract Pizza createPizza();
+    abstract Pizza createPizza(String item);
 }

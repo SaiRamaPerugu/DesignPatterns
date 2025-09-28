@@ -1,21 +1,25 @@
 package com.ram.factory;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public abstract class Pizza {
     String name;
-    String dough;
-    String sauce;
-    List<String> toppings = new ArrayList<String>();
+    Dough dough;
+    Sauce sauce;
+    Veggies[]  veggies;
+    Pepperoni pepperoni;
+    Cheese cheese;
+    Clams clams;
 
     public void prepare() {
         System.out.println("Preparing " + name);
         System.out.println("Tossing dough: " + dough);
         System.out.println("Adding sauce: " + sauce);
         System.out.println("Adding toppings:");
-        for(String topping: toppings) {
-            System.out.println(topping);
+        for(Veggies veggi: veggies) {
+            System.out.println(veggi);
         }
     }
 
@@ -33,5 +37,22 @@ public abstract class Pizza {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Pizza{" +
+                "name='" + name + '\'' +
+                ", dough=" + dough +
+                ", sauce=" + sauce +
+                ", veggies=" + Arrays.toString(veggies) +
+                ", pepperoni=" + pepperoni +
+                ", cheese=" + cheese +
+                ", clams=" + clams +
+                '}';
     }
 }
